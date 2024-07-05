@@ -111,7 +111,7 @@
     <nav>
         <ul>
             <li><a id="about-link" href="#">About Me</a></li>
-            <li><a id="hobbies-link" href="#">My hobby</a></li>
+            <li><a id="hobby-link" href="#">My hobby</a></li>
             <li><a id="contact-link" href="#">Contact</a></li>
         </ul>
     </nav>
@@ -125,7 +125,7 @@
                 学内ではエンジニアサークルに入り、サークルでできた成果物を学外の人も見れるようなサイトのプロジェクトに参加したり運営に入り学内ハッカソンを開催したりとサークルを盛り上げる活動をしています。
             </p>
         </section>
-        <section id="hobbies">
+        <section id="hobby">
             <h2>趣味</h2>
             <ul>
                 <li>サッカー</li>
@@ -154,11 +154,11 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const aboutLink = document.getElementById('about-link');
-            const hobbiesLink = document.getElementById('hobbies-link');
+            const hobbyLink = document.getElementById('hobby-link');
             const contactLink = document.getElementById('contact-link');
 
             const aboutSection = document.getElementById('about');
-            const hobbiesSection = document.getElementById('hobbies');
+            const hobbySection = document.getElementById('hobby');
             const contactSection = document.getElementById('contact');
 
             aboutLink.addEventListener('click', function(event) {
@@ -166,9 +166,9 @@
                 showSection(aboutSection);
             });
 
-            hobbiesLink.addEventListener('click', function(event) {
+            hobbyLink.addEventListener('click', function(event) {
                 event.preventDefault();
-                showSection(hobbiesSection);
+                showSection(hobbySection);
             });
 
             contactLink.addEventListener('click', function(event) {
@@ -178,7 +178,7 @@
 
             function showSection(section) {
                 aboutSection.classList.remove('active');
-                hobbiesSection.classList.remove('active');
+                hobbySection.classList.remove('active');
                 contactSection.classList.remove('active');
                 section.classList.add('active');
             }
@@ -186,5 +186,3 @@
     </script>
 </body>
 </html>
-
-
