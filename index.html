@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自己紹介サイト - SPA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        header {
+            background-color: rgb(0, 0, 0);
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            border-radius: 10px 10px 0 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            background-color: rgb(0, 0, 0);
+            margin: 0;
+            border-radius: 0 0 10px 10px;
+        }
+
+        nav ul li {
+            margin: 0 1em;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5em 1em;
+            display: block;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        nav ul li a:hover {
+            background-color: rgb(30, 30, 30);
+        }
+
+        main {
+            flex: 1;
+            padding: 2em;
+            width: 800px;
+            height: 600px;
+            background-color: rgb(255, 183, 0);
+            border-radius: 10px;
+            margin: 20px auto;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        section {
+            display: none;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1em 0;
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+            border-radius: 0 0 10px 10px;
+        }
+
+        .social-links {
+            margin-top: 2em;
+            text-align: center;
+        }
+
+        .social-links a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            margin: 0 0.5em;
+        }
+
+        .social-links a img {
+            width: 32px;
+            height: 32px;
+            border-radius: 5px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>初めまして</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a id="about-link" href="#">About Me</a></li>
+            <li><a id="hobbies-link" href="#">My hobby</a></li>
+            <li><a id="contact-link" href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="about" class="active">
+            <h2>About Me</h2>
+            <p>初めまして！</p>
+            <p>
+                私は情報学を学んでいる大学3年生です。
+                現在はハッカソンやハンズオンイベントなど学外のイベントを通じて外部の人との関わりや開発経験を積んでいます。
+                学内ではエンジニアサークルに入り、サークルでできた成果物を学外の人も見れるようなサイトのプロジェクトに参加したり運営に入り学内ハッカソンを開催したりとサークルを盛り上げる活動をしています。
+            </p>
+        </section>
+        <section id="hobbies">
+            <h2>趣味</h2>
+            <ul>
+                <li>サッカー</li>
+                <li>ラーメン</li>
+                <li>サウナ</li>
+                <li>筋トレ</li>
+                <li>エヴァンゲリオン</li>
+                <li>読書と書きたいところですが書けるほど読んでないです</li>
+            </ul>
+        </section>
+        <section id="contact">
+            <h2>お問い合わせ</h2>
+            <div class="social-links">
+                <a href="https://www.instagram.com/sta.sota" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+                </a>
+                <a href="https://github.com/sasadango2" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub">
+                </a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 私の自己紹介サイト</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const aboutLink = document.getElementById('about-link');
+            const hobbiesLink = document.getElementById('hobbies-link');
+            const contactLink = document.getElementById('contact-link');
+
+            const aboutSection = document.getElementById('about');
+            const hobbiesSection = document.getElementById('hobbies');
+            const contactSection = document.getElementById('contact');
+
+            aboutLink.addEventListener('click', function(event) {
+                event.preventDefault();
+                showSection(aboutSection);
+            });
+
+            hobbiesLink.addEventListener('click', function(event) {
+                event.preventDefault();
+                showSection(hobbiesSection);
+            });
+
+            contactLink.addEventListener('click', function(event) {
+                event.preventDefault();
+                showSection(contactSection);
+            });
+
+            function showSection(section) {
+                aboutSection.classList.remove('active');
+                hobbiesSection.classList.remove('active');
+                contactSection.classList.remove('active');
+                section.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
+
+
